@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Navbar from'./components/Navbar';
 import About from'./components/About';
@@ -52,26 +52,27 @@ function App() {
 <Navbar mode={mode}  toggleMode={toggleMode}/>
 
 <Alert alert={alert}/>
-
+<div className="container">
 <div className="container">
   <Routes>
-    <Route path="/about" element={ <About/>}>
+    <Route path="/about" element={ <About mode={mode}/>}>
     
     </Route>
 
-    <Route path="/" element={ <Testform showAlert={showAlert} heading=" Enter the text below" mode={mode}/>}>
+    <Route  path="/Testform" element={ <Testform showAlert={showAlert} heading=" Enter the text below" mode={mode}/>}>
     
     </Route>
   </Routes>
 
 
 </div>
+
+
+
+{/* <Testform showAlert={showAlert} heading=" Enter the text below" mode={mode}/> */}
+
+</div>
 </Router>
-
-
-
-
-
 
 
     </>

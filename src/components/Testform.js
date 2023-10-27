@@ -29,12 +29,12 @@ setText(event.target.value);
 <div className="mb-3">
   <label for="myBox" className="form-label"></label>
   <textarea className="form-control" value={text} onChange={handleonclick} 
-  style={{backgroundColor: props.mode==='dark'?'grey' : 'white', color:props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'black'}}  id="myBox" rows="8"  ></textarea>
+  style={{backgroundColor: props.mode==='dark'?'#13466e' : 'white', color:props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'black'}}  id="myBox" rows="8"  ></textarea>
 </div>
 
 
-<button className="my-primary-button" onClick={toUpper}> Convert </button>
-<button className="my-primary-button" onClick={tolower}> Convert </button>
+<button disabled={text.length===0} className="my-primary-button mx-1 my-1" onClick={toUpper}> Convert to Upper </button>
+<button disabled={text.length===0} className="my-primary-button mx1 my-1" onClick={tolower}> Convert to Lower </button>
     </div>
 
 
@@ -43,7 +43,7 @@ setText(event.target.value);
     Your text summary
 </h1>
 
-Your text has {text.split(" ").length} words and {text.length} characters
+Your text has {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters
 
 <h1>
     Preview
